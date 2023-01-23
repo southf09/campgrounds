@@ -1,6 +1,9 @@
+//Require express, mongoose, and set paths
+
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+const Campground = require("./models/campground");
 
 mongoose.set("strictQuery", false);
 mongoose.connect("mongodb://localhost:27017/campground");
@@ -16,6 +19,18 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+//Placeholder use of the mongoose Schema. Makes a campground with title 'My Backyard'
+//and description 'Free camping in my yard'. Can be accessed in mongo shell to verify
+app.get("/makecampground", async (req, res) => {
+  const camp = new Campground({
+    title: "My Backyard",
+    description: "Free camping in my yard",
+  });
+  await camp.save();
+  res.send(camp);
+});
+
+//Default route set up to test that express is working properly in the browser
 app.get("/", (req, res) => {
   res.render("home");
 });
