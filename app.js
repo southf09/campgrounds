@@ -25,6 +25,8 @@ app.get("/makecampground", async (req, res) => {
   const camp = new Campground({
     title: "My Backyard",
     description: "Free camping in my yard",
+    location: 'The yard...',
+    price: 'Umm, well free.'
   });
   await camp.save();
   res.send(camp);
