@@ -1,4 +1,5 @@
-//Require express, mongoose, and set paths
+//Require express, mongoose, and paths
+//Establish mongoose connection with MongoDB
 
 const express = require("express");
 const path = require("path");
@@ -14,13 +15,15 @@ db.once("open", () => {
   console.log("Database connected");
 });
 
+//Using Express, set the view engine to 'ejs' and join the path of the 'views' folder
+
 const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-//Placeholder use of the mongoose Schema. Makes a campground with title 'My Backyard'
-//and description 'Free camping in my yard'. Can be accessed in mongo shell to verify
+//Placeholder use of the mongoose Schema. Makes a campground with title 'My Backyard' and description 'Free camping in my yard'. Can be accessed in mongo shell to verify. Can also be seen by visiting localhost:3000/makecampground
+
 app.get("/makecampground", async (req, res) => {
   const camp = new Campground({
     title: "My Backyard",
@@ -32,7 +35,8 @@ app.get("/makecampground", async (req, res) => {
   res.send(camp);
 });
 
-//Default route set up to test that express is working properly in the browser
+//Express listening on port 3000, and default route set up to test that express is working properly in the browser
+
 app.get("/", (req, res) => {
   res.render("home");
 });
