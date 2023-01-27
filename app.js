@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const Campground = require("./models/campground");
 
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb://localhost:27017/campground");
+mongoose.connect("mongodb://127.0.0.1:27017/campground");
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
