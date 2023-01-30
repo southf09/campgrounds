@@ -1,6 +1,6 @@
 # Welcome to the Campground Review App!
 
-## This README file tracks the progress made and steps taken in the development of this project. Once completed, this information will be moved to a separate text file, and the README will become an in-depth description of the application.
+## This README file currently tracks the progress made and steps taken in the development of this project. Once completed, this information will be moved to a separate text file, and the README will become an in-depth description of the application.
 
 ## Steps taken so far:
 
