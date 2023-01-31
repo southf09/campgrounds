@@ -22,19 +22,6 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-//Placeholder use of the mongoose Schema. Makes a campground with title 'My Backyard' and description 'Free camping in my yard'. Can be accessed in mongo shell to verify. Can also be seen by visiting localhost:3000/makecampground
-
-app.get("/makecampground", async (req, res) => {
-  const camp = new Campground({
-    title: "My Backyard",
-    description: "Free camping in my yard",
-    location: 'The yard...',
-    price: 'Umm, well free.'
-  });
-  await camp.save();
-  res.send(camp);
-});
-
 //Express listening on port 3000, and default route set up to test that express is working properly in the browser
 
 app.get("/", (req, res) => {
