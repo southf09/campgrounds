@@ -28,10 +28,19 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+
+//Two separate routes, one that populates our seeded campgrounds on the page, with links to each individual one, and
+//one that renders an individual campground with more data 
+
 app.get("/campgrounds", async (req, res) => {
   const campgrounds = await Campground.find({});
   res.render('campgrounds/index', { campgrounds });
 });
+
+app.get('/campgrounds/:id', async(req, res) => {
+  const campground = await Campground.findById(req.params.id);
+  res.render('campgrounds/show', { campground });
+})
 
 app.listen(3000, () => {
   console.log("listening on port 3000");
