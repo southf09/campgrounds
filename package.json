@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "auto": "npx nodemon app.js"
+    "auto": "npx nodemon app.js",
+    "seed": "npx nodemon seeds/index.js"
   },
   "repository": {
     "type": "git",
