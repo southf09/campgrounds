@@ -28,7 +28,6 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-
 //Two separate routes, one that populates our seeded campgrounds on the page, with links to each individual one, and
 //one that renders an individual campground with more data 
 
