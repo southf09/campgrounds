@@ -16,6 +16,16 @@
     - seedHelpers.js: contains places and descriptors to be used later in creating fictional locations for the database
     - index.js: contains a script that populates the database in MongoDB with 50 cities as a test
 
+## CRUD Functionality and Routing
+- CRUD (Create, Read, Update, Delete) functionality added
+    - Create: new.ejs allows creation of new campgrounds to database
+    - Read: show.ejs is an informative page for each campground and it contains links to the database and editing
+    - Update: edit.ejs allows the specified campground to be updated
+    - Delete: delete functionality added within the show.ejs file
+
+- Basic links added to navigate between the different views
+
+
 ### Troubleshooting
 - nodemon not working as expected with my mac devices
     - Resolved. Work-around created by adding a script to package.json that allows the same thing to execute with 'npm run auto'
