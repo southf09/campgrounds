@@ -18,6 +18,12 @@
                         <p class="card-text">
                             <%= campground.description %>
                         </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= campground.location %>
+                            </small>
+                        </p>
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">View</a>
                     </div>
                 </div>
             </div>
