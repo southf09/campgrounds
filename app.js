@@ -1,5 +1,5 @@
-//Require express, mongoose, and paths
-//Establish mongoose connection with MongoDB
+//Require express, mongoose, ejs-mate, method-override and paths
+//Make our model folder containing campground.js accessible
 
 const express = require("express");
 const path = require("path");
@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const Campground = require("./models/campground");
+
+//Establish mongoose connection with MongoDB
 
 mongoose.set("strictQuery", false);
 mongoose.connect("mongodb://127.0.0.1:27017/campground");
@@ -28,7 +30,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
-//Express listening on port 3000, and default route set up to test that express is working properly in the browser
+//Default route set up to test that express is working properly in the browser
 
 app.get("/", (req, res) => {
   res.render("home");
@@ -73,6 +75,9 @@ app.delete('/campgrounds/:id', async (req, res) => {
   await Campground.findByIdAndDelete(id);
   res.redirect('/campgrounds');
 })
+
+
+//Listening on localhost port 3000
 
 app.listen(3000, () => {
   console.log("listening on port 3000");
