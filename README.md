@@ -27,6 +27,7 @@
 
 ### Basic Styling
 - Installed ejs-mate (node package) 
+- Added 'Partials' to the ejs boilerplate, including a bootstrap navbar and a footer
 
 
 ### Troubleshooting
